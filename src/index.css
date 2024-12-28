@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --perspective: 1000px;
+}
+
+body {
+  @apply bg-gradient-to-br from-gray-900 to-purple-900 min-h-screen;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+  perspective: var(--perspective);
+}
+
+/* Import scrollbar styles */
+@import './styles/scrollbar.css';
