@@ -13,21 +13,16 @@ export const GameOverModal: React.FC<GameOverModalProps> = ({ winner }) => {
   const resetGame = useGameStore(state => state.resetGame);
 
   const handlePlayAgain = () => {
-    console.log('Play Again clicked'); // Debug log
     resetGame();
   };
 
   return (
     <Modal isOpen={true} onClose={() => {}}>
-      <div className="relative z-50">
+      <div className="relative">
         <motion.div
-          initial={{ y: -100 }}
-          animate={{ y: 0 }}
-          transition={{
-            type: "spring",
-            damping: 15,
-            stiffness: 200
-          }}
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ type: "spring", damping: 15 }}
           className="flex justify-center mb-6"
         >
           <span className="text-6xl">🏆</span>
@@ -53,7 +48,7 @@ export const GameOverModal: React.FC<GameOverModalProps> = ({ winner }) => {
 
         <Button 
           onClick={handlePlayAgain}
-          className="w-full relative z-50"
+          className="w-full"
         >
           Play Again
         </Button>
