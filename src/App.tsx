@@ -10,7 +10,7 @@ import { useThemeStore } from './store/themeStore';
 import { cn } from './utils/cn';
 
 function App() {
-  const { gameStarted, gameOver, winner, resetGame } = useGameStore();
+  const { gameStarted, gameOver, winner } = useGameStore();
   const { getTheme } = useThemeStore();
   const theme = getTheme();
 
@@ -39,7 +39,7 @@ function App() {
       )}
 
       {gameOver && winner && (
-        <GameOverModal winner={winner} onPlayAgain={resetGame} />
+        <GameOverModal winner={winner} />
       )}
 
       <Footer />
