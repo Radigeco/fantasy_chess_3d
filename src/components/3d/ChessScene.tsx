@@ -6,7 +6,7 @@ import { Pieces } from './Pieces';
 
 export const ChessScene: React.FC = () => {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-[60vh] min-h-[340px] lg:h-[70vh]">
       <Canvas shadows camera={{ position: [8, 8, 8], fov: 45 }}>
         <ambientLight intensity={0.7} />
         <directionalLight
@@ -15,7 +15,7 @@ export const ChessScene: React.FC = () => {
           castShadow
           shadow-mapSize={[2048, 2048]}
         />
-        
+
         <Suspense fallback={null}>
           <Environment preset="city" />
           <group position={[-3.5, 0, -3.5]}>
